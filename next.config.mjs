@@ -23,10 +23,10 @@ const nextConfig = {
   },
   env: {
     DATABASE_URL: process.env.DATABASE_URL || "",
-    OTP_SECRET: OTP_SECRET,
-    JWT_SECRET: JWT_SECRET,
-    EMAIL_USER: "" || EMAIL_USER,
-    EMAIL_PASSWORD: "eyvz vtto vcux slzq",
+    OTP_SECRET: process.env.OTP_SECRET,
+    JWT_SECRET: process.env.JWT_SECRET,
+    EMAIL_USER: process.env.EMAIL_USER || "",
+    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD || "",
   },
 };
 
