@@ -33,7 +33,7 @@ export const productTypeDefs = gql`
   }
   type Mutation {
     createProduct(input: ProductCreateInput!): Product!
-    updateProduct(input: ProductCreateInput!): Product!
+    updateProduct(input: ProductUpdateInput!): Product!
     deleteProduct(id: ID!): ID!
   }
 `;

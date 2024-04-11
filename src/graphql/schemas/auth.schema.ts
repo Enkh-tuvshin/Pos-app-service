@@ -10,7 +10,7 @@ export const authTypeDefs = gql`
   }
 
   type Query {
-    getCurrentUser: User!
+    getCurrentUser(accessToken: String!): User!
   }
   type Mutation {
     requestOtp(email: String!): OtpToken!

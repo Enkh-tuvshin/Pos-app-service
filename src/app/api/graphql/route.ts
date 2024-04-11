@@ -9,12 +9,6 @@ const server = new ApolloServer({
   typeDefs,
 });
 
-const handler = startServerAndCreateNextHandler(server, {
-  context: async (request) => {
-    const token = request.headers.authorization || "";
-    const user = await getCurrentUser(token);
-    return { user };
-  },
-});
+const handler = startServerAndCreateNextHandler(server);
 
 export { handler as GET, handler as POST };

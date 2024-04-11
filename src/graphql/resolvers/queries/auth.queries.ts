@@ -1,5 +1,5 @@
-import { User } from "@prisma/client";
+import { getCurrentUser } from "@/services/auth.service";
 
 export const authQueries = {
-  getCurrentUser: (_: unknown, __: unknown, context: { user: User }) => context.user,
+  getCurrentUser: (_: unknown, { accessToken }: { accessToken: string }) => getCurrentUser(accessToken),
 };

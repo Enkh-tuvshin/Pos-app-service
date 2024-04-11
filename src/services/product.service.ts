@@ -6,8 +6,14 @@ export const createProduct = async (input: Prisma.ProductCreateInput) => {
   return product;
 };
 
-export const updateProduct = async (input: Prisma.ProductUpdateInput & { id: string }) => {
-  const product = await prisma.product.update({ where: { id: input.id }, data: input });
+export const updateProduct = async (
+  input: Prisma.ProductUpdateInput & { id: string }
+) => {
+  const { id, ...rest } = input;
+  const product = await prisma.product.update({
+    where: { id },
+    data: rest,
+  });
   return product;
 };
 
